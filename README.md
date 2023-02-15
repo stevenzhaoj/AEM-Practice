@@ -1,65 +1,56 @@
-# AEM WKND Sites Project
+# AEM安装及实例
+AEM全称**Adobe Experience Management**，是一套基于OSGI、Apache Sling和Java Content Repository技术的完整企业解决方案。传统网站是基于HTML、JS、CSS来构建，也可使用目前流行的各种框架Vue3，React等等。在AEM中，是基于模板、组件、内容组成网站的页面。
 
-![Maven CI](https://github.com/adobe/aem-guides-wknd/actions/workflows/maven.yml/badge.svg)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.adobe.aem.guides/aem-guides-wknd/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.adobe.aem.guides/aem-guides-wknd)
+## 安装
+首先需要从AEM软件下载站[AEM as a Cloud Service downloads](https://experience.adobe.com/#/downloads/content/software-distribution/en/aemcloud.html?fulltext=SDK*&orderby=@jcr%3Acontent%2Fjcr%3AlastModified&orderby.sort=desc&layout=list&p.offset=0&p.limit=16)中下载SDK，但由于AEM-SDK是付费使用的，那必须由公司或个人购买SDK后才可以下载使用。
 
-This is a sample Adobe Experience Manager project for a full stack Sites implementation for a fictitious lifestyle brand, WKND.
+可以按照自己的需求下载最新版本或之前的版本，下载后的文件名为：aem-sdk-2022.8.8316.20220818T100409Z-220700.zip
 
-![App screenshot](https://user-images.githubusercontent.com/8974514/119887685-489f7800-bee9-11eb-9db1-95c641e7c4ea.jpg)
+解压后目录如下，最主要的文件就是目录里的jar包
 
-## Live Demo
+![在这里插入图片描述](https://img-blog.csdnimg.cn/b1be21be3eef4e3e9df593289f5d92a8.png)
+Mac版和Linux版本都可以找到对应的下载链接
+## 启动Author实例
+在AEM中，分为Author实例和Publish实例，还有一个Dispatcher组件。
 
-View the live demo at [https://www.wknd.site/](https://www.wknd.site/)
+Author实例，顾名思义是作者实例，我们可以在Author实例中进行模板、组件的使用，还可以通过代码实现自定义组件、自定义模板等等功能。开发人员的工作内容也大多集中在Author实例上。
 
-## Tutorial
+Publish实例是发布实例，我们在Author实例中创建页面、在页面中使用组件并编辑内容后，就可以将Author实例中的页面发布到Publish实例中去。
 
-A corresponding [tutorial is available](https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) where you can learn how to implement a website using the latest standards and technologies in AEM Sites.
+Dispatcher组件是一个集Web服务器、缓存、CDN等功能于一体的组件。
 
-## How to use
+![在这里插入图片描述](https://img-blog.csdnimg.cn/f483a5f8d30e4c17802d7695cafc6695.png)
+前面少了一个Author向Publish发送数据的图。上图就是用户访问页面后的一系列底层逻辑。
 
-Pre-compiled AEM packages are available under the latest release for easy installation on local environments using [CRX Package Manager](http://localhost:4502/crx/packmgr/index.jsp)
+具体的使用后面都会讲到。
 
-* [`aem-guides-wknd.all-x.x.x.zip`](https://github.com/adobe/aem-guides-wknd/releases/latest): AEM as a Cloud Service, default build
-* [`aem-guides-wknd.all-x.x.x-classic.zip`](https://github.com/adobe/aem-guides-wknd/releases/latest): AEM 6.5.x+, AEM 6.4.x+
+接下来启动Author实例，创建author目录，并把上面解压出来的jar包拷贝过来并改名为aem-author-p4502.jar，license.properties最新版本可以不需要此文件，crx-quickstart目录为author实例启动后自动生成的内容。
 
-## How to build
+jar包名字的命名方式，aem-实例名(author/publish)-p端口号.jar
 
-For **AEM as a Cloud Service SDK**: 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c7ff365e87e34cc38fa652031acaebe6.png)
+在当前目录使用CMD，启动author实例
 
+```shell
+java -jar aem-author-p4502.jar -&
 ```
-$ cd aem-guides-wknd/
-$ mvn clean install -PautoInstallSinglePackage
-```
+输入命令后会让用户输入登录author实例的账号和密码
 
-For **AEM 6.4.x** and **6.5.x**: 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/9db5ed3148e447a98f93259783a724a7.png)
 
-```
-$ cd aem-guides-wknd/
-$ mvn clean install -PautoInstallSinglePackage -Pclassic
-```
+启动后会生成crx-quickstart目录，目录结构如下
 
-## System Requirements
+![在这里插入图片描述](https://img-blog.csdnimg.cn/f69846e02dd7457b89e16379c6fce9d0.png)
 
- AEM as a Cloud Service | AEM 6.5 | AEM 6.4 | Java SE | Maven
----------|---------|---------|---------|---------
-Continual | 6.5.7.0+ | 6.4.8.4+ | 8, 11 | 3.3.9+
+需要等1-3分钟，第一次启动会稍微慢一点，浏览器会自动打开http://localhost:4502
 
-Setup your local development environment for [AEM as a Cloud Service SDK](https://experienceleague.adobe.com/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/overview.html) or for [older versions of AEM](https://experienceleague.adobe.com/docs/experience-manager-learn/foundation/development/set-up-a-local-aem-development-environment.html).
+![在这里插入图片描述](https://img-blog.csdnimg.cn/a14a25ab6f134d14b1803af680b85e45.png)
 
-## Notes
+如果你的操作系统是英文，那么这个界面就是英文界面。
 
-### WKND Sample Content
+输入刚才在命令框中输入的账号密码
 
-By default, sample content from `ui.content.sample` will be deployed and installed along with the WKND code base. The WKND reference site is used for demo and training purposes and having a pre-built, fully authored site is useful. However, the behavior of including a full reference site (pages, images, etc...) in source control is *unusual* and is **not** recommended for a real-world implementation.
+![在这里插入图片描述](https://img-blog.csdnimg.cn/048fac8e13dc448885f3e717255a67b0.png)
+进入AEM的author实例首页，我们就可以在这里进行开发工作。
 
-Including `ui.content.sample` will **overwrite** any authored content during each build. If you wish to disable this behavior modify the [filter.xml](ui.content.sample/src/main/content/META-INF/vault/filter.xml) file and update the `mode=merge` attribute to avoid overwriting the paths.
-
-```diff
-- <filter root="/content/wknd" />
-+ <filter root="/content/wknd" mode="merge"/>
-```
-
-## Documentation
-
-* This project was generated using the [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html).
-* This project relies on [AEM Core Components](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/introduction.html).
+author实例的安装就到此结束了，下一章会讲解如何使用AEM官方提供的WKND示例进行自定义模板和组件的开发。
