@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-02-16T20:44:28.232+08:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/wknd/settings/wcm/templates/steven"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="wknd/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wknd/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2023-02-16T20:42:38.592+08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wknd/components/container"
+                layout="responsiveGrid">
+                <image
+                    jcr:created="{Date}2023-02-16T19:45:46.511+08:00"
+                    jcr:createdBy="admin"
+                    jcr:description="Steven Init"
+                    jcr:lastModified="{Date}2023-02-16T19:51:04.714+08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Steven Init"
+                    sling:resourceType="foundation/components/image"
+                    alt="Steven Init"
+                    fileReference="/content/dam/wknd/en/magazine/la-skateparks/skateboard-hero.jpg"
+                    height="300"
+                    width="500">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="6"/>
+                    </cq:responsive>
+                </image>
+                <text
+                    jcr:created="{Date}2023-02-16T19:45:59.480+08:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2023-02-16T19:49:25.082+08:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/text"
+                    text="&lt;p>Test 测试初始化内容&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="5"/>
+                    </cq:responsive>
+                </text>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

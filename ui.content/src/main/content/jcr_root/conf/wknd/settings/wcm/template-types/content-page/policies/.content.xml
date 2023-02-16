@@ -16,7 +16,7 @@
             <container
                 cq:policy="wknd/components/container/policy_213106331986985"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/core/components/policies/mapping" />
+                sling:resourceType="wcm/core/components/policies/mapping"/>
             <experiencefragment-footer
                 cq:policy="wknd/components/experiencefragment/policy_1568592468447"
                 jcr:primaryType="nt:unstructured"

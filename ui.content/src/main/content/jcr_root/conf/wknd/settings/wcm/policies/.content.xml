@@ -36,14 +36,16 @@
                 </content-default>
                 <policy_213106331986985
                     cq:styleDefaultElement="main"
-                    jcr:lastModified="{Date}2020-07-09T08:11:09.069-07:00"
+                    jcr:description="Steven Content Policy"
+                    jcr:lastModified="{Date}2023-02-16T19:43:18.789+08:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="WKND Content"
+                    jcr:title="Steven Content"
                     sling:resourceType="wcm/core/components/policy/policy"
                     backgroundColorEnabled="true"
                     backgroundImageEnabled="true"
-                    components="[group:WKND.Content]">
+                    components="[group:General,group:Address,group:WKND Site - Content,group:WKND.Content,group:WKND.Form]"
+                    layoutDisabled="false">
                     <jcr:content
                         cq:lastReplicated="{Date}2019-10-22T13:34:50.533-07:00"
                         cq:lastReplicatedBy="admin"

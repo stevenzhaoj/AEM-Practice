@@ -1,8 +1,10 @@
 # Practice for AEM
 
-## Develop
+## 1.Develop
 
 [01_AEM安装及Author实例的启动](readme/01_develop/01_AEM安装及Author实例的启动.md)
 
-## HTL
+[02_自定义模板和页面](readme/01_develop/02_自定义模板和页面.md)
+
+## 2.HTL
 
