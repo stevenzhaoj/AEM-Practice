@@ -6,5 +6,6 @@
 
 [02_自定义模板和页面](readme/01_develop/02_自定义模板和页面.md)
 
+[03_自定义组件](readme/01_develop/03_自定义组件.md)
 ## 2.HTL
 
