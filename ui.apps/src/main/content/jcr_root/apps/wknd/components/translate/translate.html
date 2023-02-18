@@ -4,9 +4,11 @@
 
 <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
 <sly data-sly-call="${clientLib.all @ categories='steven.translate'}" />
-<div class="cmp-translate" appId="${properties.appId}" appKey="${properties.appKey}">
-    <input id="trans-content" type="text" placeholder="请输入需要翻译的英文内容" >
-    <button onclick="trans()">翻译</button><br>
-    <span id="result"></span>
-</div>
 
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Translate">
+    <div class="cmp-translate" appId="${model.appId}" appKey="${model.appKey}">
+        <input id="trans-content" type="text" placeholder="请输入需要翻译的英文内容" >
+        <button onclick="trans()">翻译</button><br>
+        <span id="result"></span>
+    </div>
+</sly>
