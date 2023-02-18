@@ -60,6 +60,23 @@ public class Translate {
 
 上图中就是steven页面在JCR中的位置及它的属性和内容，可以看到从组件对话框中输入的appId和appKey，@ValueMapValue注解可以直接获取到组件中的内容。
 
+访问[localhost:4502/content/wknd/us/en/steven/jcr:content/root/container/translate.json](http://localhost:4502/content/wknd/us/en/steven/jcr:content/root/container/translate.json)地址可以查看到组件的json格式内容
+
+```json
+{
+    "appId": "2e4d3244dcd719a1",
+    "appKey": "9ktqEdqBxxiqwjVSPGAhexffreiKJn7A",
+    "jcr:created": "Sat Feb 18 2023 15:48:21 GMT+0800",
+    "jcr:createdBy": "admin",
+    "jcr:lastModified": "Sat Feb 18 2023 15:48:31 GMT+0800",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wknd/components/translate"
+}
+```
+
+
+
 ## 修改HTL
 
 在HTL中引入上面编写的SlingModel
