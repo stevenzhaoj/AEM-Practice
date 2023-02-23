@@ -12,5 +12,9 @@
 
 [05_AEM中常用的API](readme/01_develop/05_AEM中常用的API.md)
 
+[06_CustomLog](readme/01_develop/06_CustomLog.md)
+
+[07_OSGi Service & Config](readme/01_develop/07_OSGi%20Service%20&%20Config.md)
+
 ## 2.HTL
 
