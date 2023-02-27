@@ -40,9 +40,21 @@
     }
 
     const truncate = (q)=> {
-              var len = q.length;
-              if(len<=20) return q;
-              return q.substring(0, 10) + len + q.substring(len-10, len);
-          }
+        var len = q.length;
+        if(len<=20) return q;
+        return q.substring(0, 10) + len + q.substring(len-10, len);
+    }
+
+    transByServlet = function() {
+        var query = $('#trans-content').val();
+        $.ajax({
+            url: '/bin/translate?content=' + query,
+            type: 'get',
+            success: function (data) {
+                var translation = data.translation
+                $('#result').html('翻译结果：' + translation);
+            }
+        });
+    }
 
 })();

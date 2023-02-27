@@ -9,4 +9,6 @@ public interface TranslateService {
     String getAppKey(Resource resource);
 
     String getName();
+
+    String translate();
 }

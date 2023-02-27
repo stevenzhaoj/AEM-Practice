@@ -16,5 +16,7 @@
 
 [07_OSGi Service & Config](readme/01_develop/07_OSGi%20Service%20&%20Config.md)
 
+[08_SlingServlet](readme/01_develop/08_SlingServlet.md)
+
 ## 2.HTL
 

@@ -46,4 +46,9 @@ public class TranslateServiceAImpl implements TranslateService {
     public String getName() {
         return "TranslateServiceAImpl";
     }
+
+    @Override
+    public String translate() {
+        return null;
+    }
 }

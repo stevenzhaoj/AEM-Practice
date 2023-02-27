@@ -1,12 +1,3 @@
-# 八、Sling Servlet的使用
-
-这一章介绍如何使用SlingServlet开发AEM的HTTP接口，从AEM后端实现翻译功能。
-
-## 编写Servlet
-
-使用@Component注解声明是一个Servlet服务，sling.servlet.methods参数声明HTTP请求方法，sling.servlet.paths参数声明HTTP请求路径
-
-```java
 package com.adobe.aem.guides.wknd.core.servlet;
 
 import lombok.extern.slf4j.Slf4j;
@@ -52,9 +43,9 @@ public class TranslateServlet extends SlingAllMethodsServlet {
 
     private static final String YOUDAO_URL = "https://openapi.youdao.com/api";
 
-    private static final String APP_KEY = "应用ID";
+    private static final String APP_KEY = "";
 
-    private static final String APP_SECRET = "应用密钥";
+    private static final String APP_SECRET = "";
 
     @Override
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
@@ -189,65 +180,3 @@ public class TranslateServlet extends SlingAllMethodsServlet {
         return len <= 20 ? q : (q.substring(0, 10) + len + q.substring(len - 10, len));
     }
 }
-```
-
-使用postman测试，需要添加认证信息，在postman中接口访问正常，但在AEM页面中会出现下面的问题
-
-![image-20230227192521071](./assets/image-20230227192521071.png)
-
-### 出现的问题及解决办法
-
-#### 接口403问题
-
-![image-20230227190540323](./assets/image-20230227190540323.png)
-
-打开[Adobe Experience Manager Web Console - Configuration](http://localhost:4502/system/console/configMgr)配置页，搜索CSRF，打开配置添加Servlet地址/bin/translate，保存即可
-
-![image-20230227190829627](./assets/image-20230227190829627.png)
-
-#### 中文乱码问题
-
-![image-20230227190353903](./assets/image-20230227190353903.png)
-
-需要在Servlet中设置返回数据的编码格式及数据类型
-
-```java
-// 设置返回数据类型为json，编码格式为UTF-8
-response.setContentType("application/json;charset=utf-8");
-response.getWriter().print(result);
-```
-
-## 页面及JS修改
-
-### 页面修改
-
-```html
-<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Translate">
-    <h1>类名: ${model.className}</h1>
-    <div class="cmp-translate" appId="${model.appId}" appKey="${model.appKey}">
-        <input id="trans-content" type="text" placeholder="请输入需要翻译的英文内容" >
-        <button onclick="transByServlet()">翻译</button><br>
-        <span id="result"></span>
-    </div>
-</sly>
-```
-
-### js修改
-
-```javascript
-transByServlet = function() {
-    var query = $('#trans-content').val();
-    $.ajax({
-        url: '/bin/translate?content=' + query,
-        type: 'get',
-        success: function (data) {
-            var translation = data.translation
-            $('#result').html('翻译结果：' + translation);
-        }
-    });
-}
-```
-
-## 完整效果
-
-![image-20230227192836857](./assets/image-20230227192836857.png)

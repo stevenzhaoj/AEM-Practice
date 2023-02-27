@@ -51,4 +51,10 @@ public class TranslateServiceImpl implements TranslateService {
     public String getName() {
         return injectService.getName();
     }
+
+    @Override
+    public String translate() {
+
+        return null;
+    }
 }
