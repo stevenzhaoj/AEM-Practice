@@ -20,5 +20,7 @@
 
 [09_Scheduler](readme/01_develop/09_Scheduler.md)
 
+[10_QueryBuild](readme/01_develop/10_QueryBuild.md)
+
 ## 2.HTL
 

@@ -6,6 +6,10 @@ import com.adobe.aem.guides.wknd.core.service.TranslateService;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.day.cq.commons.inherit.InheritanceValueMap;
 import com.day.cq.commons.jcr.JcrConstants;
+import com.day.cq.search.Query;
+import com.day.cq.search.QueryBuilder;
+import com.day.cq.search.result.Hit;
+import com.day.cq.search.result.SearchResult;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.api.WCMException;
@@ -27,9 +31,15 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.osgi.service.component.annotations.Reference;
+import com.day.cq.search.PredicateGroup;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Model(
@@ -80,7 +90,7 @@ public class Translate {
     private TranslateConfigImpl translateConfig;
 
     @PostConstruct
-    public void init() throws WCMException, PersistenceException {
+    public void init() throws WCMException, PersistenceException, RepositoryException {
         // resourceResolver是资源转换类，可以通过此类获取对应的页面，也可以转换为其他API
 //        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
         // pageManager可以通过页面路径获取到对应的Page对象
@@ -116,6 +126,29 @@ public class Translate {
         log.info("isEnable = {}", isEnable);
         type = translateConfig.getType();
         log.info("type = {}", type);
+
+        // QueryBuild
+        Map<String, String> map = new HashMap<>();
+        map.put("path", "/content/wknd");
+        map.put("property", "sling:resourceType");
+        map.put("property.value", "wknd/components/translate");
+        map.put("1_property", "appId");
+        map.put("1_property.value", "1111");
+        PredicateGroup predicateGroup = PredicateGroup.create(map);
+        QueryBuilder queryBuilder = resourceResolver.adaptTo(QueryBuilder.class);
+        Session session = resourceResolver.adaptTo(Session.class);
+        Query query = queryBuilder.createQuery(predicateGroup, session);
+        SearchResult result = query.getResult();
+        List<Hit> hits = result.getHits();
+        for (Hit hit : hits) {
+            String path = hit.getPath();
+            log.info("hit path : {}", path);
+            Resource componentResource = resourceResolver.getResource(path);
+            ValueMap valueMap = componentResource.getValueMap();
+            String appId1 = valueMap.get("appId", String.class);
+            String appKey1 = valueMap.get("appKey", String.class);
+            log.info("appId1 = {}, appKey1 = {}", appId1, appKey1);
+        }
     }
 
     public String getClassName() {

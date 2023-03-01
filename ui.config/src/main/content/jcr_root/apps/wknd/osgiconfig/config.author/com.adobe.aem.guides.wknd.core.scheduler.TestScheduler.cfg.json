@@ -1,5 +1,5 @@
 {
   "schedulerName" : "Test Scheduler",
-  "enabled" : true,
+  "enabled" : false,
   "schedulerExpression" : "0/20 * * * * ?"
 }
