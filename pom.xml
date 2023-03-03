@@ -331,12 +331,12 @@ Bundle-DocURL:
                     </dependencies>
                 </plugin>
                 <!-- AEM Analyser Plugin -->
-                <plugin>
-                    <groupId>com.adobe.aem</groupId>
-                    <artifactId>aemanalyser-maven-plugin</artifactId>
-                    <version>${aemanalyser.version}</version>
-                    <extensions>true</extensions>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>com.adobe.aem</groupId>-->
+<!--                    <artifactId>aemanalyser-maven-plugin</artifactId>-->
+<!--                    <version>${aemanalyser.version}</version>-->
+<!--                    <extensions>true</extensions>-->
+<!--                </plugin>-->
                 <!-- Content Package Plugin -->
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
