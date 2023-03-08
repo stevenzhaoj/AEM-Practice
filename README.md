@@ -26,5 +26,7 @@
 
 [12_JCREventListener](readme/01_develop/12_JCREventListener.md)
 
+[13_InstallPublishInstance](readme/01_develop/13_InstallPublishInstance.md)
+
 ## 2.HTL
 
