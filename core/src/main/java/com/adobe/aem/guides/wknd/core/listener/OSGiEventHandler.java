@@ -48,6 +48,6 @@ public class OSGiEventHandler implements EventHandler {
         Map<String, Object> jobProperties = new HashMap<>();
         jobProperties.put("event", event.getTopic());
         jobProperties.put("path", event.getProperty(SlingConstants.PROPERTY_PATH));
-        Job job = jobManager.addJob(JOB_TOPIC, jobProperties);
+//        Job job = jobManager.addJob(JOB_TOPIC, jobProperties);
     }
 }

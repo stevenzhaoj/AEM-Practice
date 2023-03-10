@@ -28,5 +28,7 @@
 
 [13_InstallPublishInstance](readme/01_develop/13_InstallPublishInstance.md)
 
+[14_ReplicationEventHandler&PageEventHandler](readme/01_develop/14_ReplicationEventHandler%20&%20PageEventHandler.md)
+
 ## 2.HTL
 
