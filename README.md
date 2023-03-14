@@ -32,5 +32,7 @@
 
 [15_ExportPackages&ImportPackages](readme/01_develop/15_ExportPackages&ImportPackages.md)
 
+[16_InitializationForUsersGroups](readme/01_develop/16_InitializationForUsersGroups.md)
+
 ## 2.HTL
 
