@@ -34,5 +34,7 @@
 
 [16_InitializationForUsersGroups](readme/01_develop/16_InitializationForUsersGroups.md)
 
+[17_JCR SQL](readme/01_develop/17_JCR%20SQL.md)
+
 ## 2.HTL
 
