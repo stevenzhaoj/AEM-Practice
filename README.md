@@ -36,5 +36,7 @@
 
 [17_JCR SQL](readme/01_develop/17_JCR%20SQL.md)
 
+[18_ContextAwareConfiguration](readme/01_develop/18_ContextAwareConfiguration.md)
+
 ## 2.HTL
 

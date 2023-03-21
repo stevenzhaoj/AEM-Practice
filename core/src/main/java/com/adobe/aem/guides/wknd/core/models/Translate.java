@@ -1,5 +1,6 @@
 package com.adobe.aem.guides.wknd.core.models;
 
+import com.adobe.aem.guides.wknd.core.config.ContextAwareConfigurationDemo;
 import com.adobe.aem.guides.wknd.core.config.TranslateConfig;
 import com.adobe.aem.guides.wknd.core.config.impl.TranslateConfigImpl;
 import com.adobe.aem.guides.wknd.core.service.TranslateService;
@@ -40,6 +41,7 @@ import javax.jcr.Session;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @Slf4j
 @Model(
@@ -88,6 +90,8 @@ public class Translate {
 
     @OSGiService
     private TranslateConfigImpl translateConfig;
+
+    private ContextAwareConfigurationDemo config;
 
     @PostConstruct
     public void init() throws WCMException, PersistenceException, RepositoryException {
@@ -149,9 +153,21 @@ public class Translate {
             String appKey1 = valueMap.get("appKey", String.class);
             log.info("appId1 = {}, appKey1 = {}", appId1, appKey1);
         }
+
+        config = resource.adaptTo(ConfigurationBuilder.class).as(ContextAwareConfigurationDemo.class);
+        log.info("siteName is {}", config.siteName());
+        log.info("siteUrl is {}", config.siteUrl());
     }
 
     public String getClassName() {
-        return translateService.getName();
+        return Objects.isNull(translateService) ? "" : translateService.getName();
+    }
+
+    public String getSiteName() {
+        return Objects.nonNull(config) ? config.siteName() : "empty";
+    }
+
+    public String getSiteUrl() {
+        return Objects.nonNull(config) ? config.siteUrl() : "empty";
     }
 }

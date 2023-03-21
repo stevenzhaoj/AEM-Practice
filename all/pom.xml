@@ -84,7 +84,19 @@
                             <type>zip</type>
                             <target>/apps/wknd-packages/sample/install</target>
                         </embedded>
+                        <embedded>
+                            <groupId>io.wcm</groupId>
+                            <artifactId>io.wcm.caconfig.extensions</artifactId>
+                            <target>/apps/wknd-packages/application/install</target>
+                        </embedded>
                     </embeddeds>
+                    <subPackages>
+                        <subPackage>
+                            <groupId>io.wcm</groupId>
+                            <artifactId>io.wcm.caconfig.editor.package</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                    </subPackages>
                 </configuration>
             </plugin>
             <plugin>
@@ -108,20 +120,20 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.adobe.aem</groupId>
-                <artifactId>aemanalyser-maven-plugin</artifactId>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>analyse-project</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>project-analyse</goal>                           
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.adobe.aem</groupId>-->
+<!--                <artifactId>aemanalyser-maven-plugin</artifactId>-->
+<!--                <extensions>true</extensions>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>analyse-project</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>project-analyse</goal>                           -->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
@@ -292,6 +304,19 @@
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.core</artifactId>                
+        </dependency>
+        <!-- WCM IO CA Config UI Editor Dependencies -->
+        <dependency>
+            <groupId>io.wcm</groupId>
+            <artifactId>io.wcm.caconfig.editor.package</artifactId>
+            <version>1.8.2</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>io.wcm</groupId>
+            <artifactId>io.wcm.caconfig.extensions</artifactId>
+            <version>1.8.2</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 </project>

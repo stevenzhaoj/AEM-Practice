@@ -7,6 +7,8 @@
 
 <sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Translate">
     <h1>类名: ${model.className}</h1>
+    <h1>SiteName: ${model.siteName}</h1>
+    <h1>SiteUrl: ${model.siteUrl}</h1>
     <div class="cmp-translate" appId="${model.appId}" appKey="${model.appKey}">
         <input id="trans-content" type="text" placeholder="请输入需要翻译的英文内容" >
         <button onclick="transByServlet()">翻译</button><br>

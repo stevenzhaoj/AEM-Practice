@@ -467,7 +467,7 @@ Bundle-DocURL:
                     <url>https://repo.adobe.com/nexus/content/groups/public</url>
                     <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
+                        <updatePolicy>always</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>false</enabled>

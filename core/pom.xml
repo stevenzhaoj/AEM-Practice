@@ -42,7 +42,12 @@
                         </goals>
                         <configuration>
                             <bnd><![CDATA[
-Import-Package: javax.annotation;version=0.0.0,*
+                            -plugin org.apache.sling.caconfig.bndplugin.ConfigurationClassScannerPlugin
+
+                            Import-Package: javax.annotation;version=0.0.0,*
+                            Export-Package: com.adobe.aem.guides.wknd.core.*
+                            Sling-Model-Packages: com.adobe.aem.guides.wknd.core.models
+                            -exportcontents: com.adobe.aem.guides.wknd.core.models.*
                                 ]]></bnd>
                         </configuration>
                     </execution>

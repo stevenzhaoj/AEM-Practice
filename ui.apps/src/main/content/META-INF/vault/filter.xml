@@ -3,5 +3,6 @@
     <filter root="/apps/wknd/clientlibs"/>
     <filter root="/apps/wknd/components"/>
     <filter root="/apps/wknd/i18n"/>
+    <filter root="/apps/wknd/templates"/>
     <filter root="/apps/msm/wknd_blueprint" mode="merge"/>
 </workspaceFilter>
