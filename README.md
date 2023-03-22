@@ -38,5 +38,9 @@
 
 [18_ContextAwareConfiguration](readme/01_develop/18_ContextAwareConfiguration.md)
 
-## 2.HTL
+## 2.Content Fragment
+
+[01_ContentFragment](readme/02_ContentFragment/01_ContentFragment.md)
+
+## 3.HTL
 
