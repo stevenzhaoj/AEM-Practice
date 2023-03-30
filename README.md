@@ -46,5 +46,8 @@
 
 [01_BasicWorkflow](readme/03_Workflow/01_BasicWorkflow.md)
 
+
+[02_CustomWorkflowProcess](readme/03_Workflow/02_CustomWorkflowProcess.md)
+
 ## 4.HTL
 
