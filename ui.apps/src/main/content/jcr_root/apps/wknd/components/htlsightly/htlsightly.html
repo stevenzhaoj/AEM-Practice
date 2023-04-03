@@ -1,0 +1,18 @@
+<div class="cq-placeholder cmp-title" data-emptytext="${component.title}:Click to configure" data-sly-unwrap="${!wcmmode.edit}"></div>
+
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.HTLSightly">
+    <h1>==== data-sly-list =====</h1>
+    <div  class="list" data-sly-list.book="${model.books @ begin = 0, step=2, end = 2}">
+        <h1>下标：${bookList.index}</h1>
+        <h1>序号：${bookList.count}</h1>
+        <h2>书名：${book.name}</h2>
+        <h2>价格：${book.price}</h2>
+    </div>
+
+    <h1>==== data-sly-repeat =====</h1>
+    <div class="repeat" data-sly-repeat.book="${model.books}">
+        <h1>下标：${bookList.index}, 序号：${bookList.count}, 第一个：${bookList.first}, 最后一个：${bookList.last}</h1>
+        <h2>书名：${book.name}</h2>
+        <h2>价格：${book.price}</h2>
+    </div>
+</sly>
