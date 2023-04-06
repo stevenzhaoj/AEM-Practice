@@ -15,4 +15,9 @@
         <h2>书名：${book.name}</h2>
         <h2>价格：${book.price}</h2>
     </div>
+
+    <h1>==== data-sly-template =====</h1>
+    <div data-sly-use.booksTemplate="booksTemplate.html">
+        <sly data-sly-call="${booksTemplate.templateBooks @ books=model.books}"></sly>
+    </div>
 </sly>
