@@ -20,4 +20,9 @@
     <div data-sly-use.booksTemplate="booksTemplate.html">
         <sly data-sly-call="${booksTemplate.templateBooks @ books=model.books}"></sly>
     </div>
+
+    <h1>==== data-sly-element & data-sly-attribute =====</h1>
+    <div data-sly-element="${model.titleSize}" data-sly-test="${model.title}" data-sly-attribute.id="id">${model.title}</div>
+    <div data-sly-test="${model.title}" data-sly-attribute.class="class">${model.title}</div>
+    <div data-sly-test="${model.title}" data-sly-attribute="${model.attributes}">${model.title}</div>
 </sly>

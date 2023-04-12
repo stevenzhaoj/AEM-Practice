@@ -3,15 +3,21 @@ package com.adobe.aem.guides.wknd.core.models.impl;
 import com.adobe.aem.guides.wknd.core.models.HTLSightly;
 import com.adobe.aem.guides.wknd.core.models.dto.Book;
 import com.adobe.cq.export.json.ExporterConstants;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Model(
@@ -24,6 +30,24 @@ import java.util.List;
 public class HTLSightlyImpl implements HTLSightly {
 
     public final static String RESOURCE_TYPE = "wknd-guides/components/htlsightly";
+
+    @Getter
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    @Default(values = "h1")
+    private String titleSize;
+
+    @Getter
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String title;
+
+    private Map<String, String> attributes;
+
+    public Map<String, String> getAttributes() {
+        attributes = new HashMap<>();
+        attributes.put("id", "testId");
+        attributes.put("class", "testClass");
+        return attributes;
+    }
 
     @Override
     public List<Book> getBooks() {
