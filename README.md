@@ -56,3 +56,5 @@
 [02_data-sly-template&data-sly-call](readme/04_Sightly/02_data-sly-template&data-sly-call.md)
 
 [03_data-sly-element&data-sly-attribute](readme/04_Sightly/03_data-sly-element&data-sly-attribute.md)
+
+[04_data-sly-include&data-sly-resource](readme/04_Sightly/04_data-sly-include&data-sly-resource.md)
