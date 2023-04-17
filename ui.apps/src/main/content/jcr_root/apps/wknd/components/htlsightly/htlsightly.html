@@ -2,16 +2,49 @@
 
 <sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.HTLSightly">
 
-    <h1>==== data-sly-include =====</h1>
-    <div class="include1" data-sly-include="include1.html">include1 content</div>
-    <div data-sly-include="${'include/include2.html'}"></div>
-    <div data-sly-include="${'include2.html' @ prependPath='include'}"></div>
-    <div data-sly-include="${'include' @ appendPath='include2.html'}"></div>
-    <div data-sly-include="${@ file='include3.html'}"></div>
-    <div data-sly-include="${'include3.html' @ prependPath='/prependPath', appendPath='/appendPath'}"></div>
+<!--    <h1>==== data-sly-list =====</h1>-->
+<!--    <div  class="list" data-sly-list.book="${model.books @ begin = 0, step=2, end = 2}">-->
+<!--        <h1>下标：${bookList.index}</h1>-->
+<!--        <h1>序号：${bookList.count}</h1>-->
+<!--        <h2>书名：${book.name}</h2>-->
+<!--        <h2>价格：${book.price}</h2>-->
+<!--    </div>-->
 
-    <h1>==== data-sly-resource =====</h1>
-    <div data-sly-resource="${'/content/wknd/us/en/steven'}"></div>
-    <div data-sly-resource="${'/content/wknd/us/en/steven/jcr:content/root/container/translate'}"></div>
-    <div data-sly-resource="${'translate' @ resourceType='wknd/components/translate'}"></div>
+<!--    <h1>==== data-sly-repeat =====</h1>-->
+<!--    <div class="repeat" data-sly-repeat.book="${model.books}">-->
+<!--        <h1>下标：${bookList.index}, 序号：${bookList.count}, 第一个：${bookList.first}, 最后一个：${bookList.last}</h1>-->
+<!--        <h2>书名：${book.name}</h2>-->
+<!--        <h2>价格：${book.price}</h2>-->
+<!--    </div>-->
+
+<!--    <h1>==== data-sly-template =====</h1>-->
+<!--    <div data-sly-use.booksTemplate="booksTemplate.html">-->
+<!--        <sly data-sly-call="${booksTemplate.templateBooks @ books=model.books}"></sly>-->
+<!--    </div>-->
+
+<!--    <h1>==== data-sly-element & data-sly-attribute =====</h1>-->
+<!--    <div data-sly-element="${model.titleSize}" data-sly-test="${model.title}" data-sly-attribute.id="id">${model.title}</div>-->
+<!--    <div data-sly-test="${model.title}" data-sly-attribute.class="class">${model.title}</div>-->
+<!--    <div data-sly-test="${model.title}" data-sly-attribute="${model.attributes}">${model.title}</div>-->
+
+
+<!--    <h1>==== data-sly-include =====</h1>-->
+<!--    <div class="include1" data-sly-include="include1.html">include1 content</div>-->
+<!--    <div data-sly-include="${'include/include2.html'}"></div>-->
+<!--    <div data-sly-include="${'include2.html' @ prependPath='include'}"></div>-->
+<!--    <div data-sly-include="${'include' @ appendPath='include2.html'}"></div>-->
+<!--    <div data-sly-include="${@ file='include3.html'}"></div>-->
+<!--    <div data-sly-include="${'include3.html' @ prependPath='/prependPath', appendPath='/appendPath'}"></div>-->
+
+<!--    <h1>==== data-sly-resource =====</h1>-->
+<!--    <div data-sly-resource="${'/content/wknd/us/en/steven'}"></div>-->
+<!--    <div data-sly-resource="${'/content/wknd/us/en/steven/jcr:content/root/container/translate'}"></div>-->
+<!--    <div data-sly-resource="${'translate' @ resourceType='wknd/components/translate'}"></div>-->
+
+    <h1>==== time & date =====</h1>
+    ${properties.jcr:created}
+    <div>${'yyyy-MM-dd' @ format=properties.jcr:created}</div>
+    <div>${'yyyy-MM-dd HH:mm:ss' @ format=properties.jcr:created, timezone='GMT+8'}</div>
+    <div>${'EEEE, d MMM y' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>
+    <div>${'yyyy MMMM dd a hh:mm:ss; \'day in year\': w' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>
 </sly>

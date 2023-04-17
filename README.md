@@ -58,3 +58,5 @@
 [03_data-sly-element&data-sly-attribute](readme/04_Sightly/03_data-sly-element&data-sly-attribute.md)
 
 [04_data-sly-include&data-sly-resource](readme/04_Sightly/04_data-sly-include&data-sly-resource.md)
+
+[05_Format&Time&Date](readme/04_Sightly/05_Time&Date.md)
