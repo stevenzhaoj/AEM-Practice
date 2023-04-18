@@ -41,10 +41,24 @@
 <!--    <div data-sly-resource="${'/content/wknd/us/en/steven/jcr:content/root/container/translate'}"></div>-->
 <!--    <div data-sly-resource="${'translate' @ resourceType='wknd/components/translate'}"></div>-->
 
-    <h1>==== time & date =====</h1>
-    ${properties.jcr:created}
-    <div>${'yyyy-MM-dd' @ format=properties.jcr:created}</div>
-    <div>${'yyyy-MM-dd HH:mm:ss' @ format=properties.jcr:created, timezone='GMT+8'}</div>
-    <div>${'EEEE, d MMM y' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>
-    <div>${'yyyy MMMM dd a hh:mm:ss; \'day in year\': w' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>
+<!--    <h1>==== time & date =====</h1>-->
+<!--    ${properties.jcr:created}-->
+<!--    <div>${'yyyy-MM-dd' @ format=properties.jcr:created}</div>-->
+<!--    <div>${'yyyy-MM-dd HH:mm:ss' @ format=properties.jcr:created, timezone='GMT+8'}</div>-->
+<!--    <div>${'EEEE, d MMM y' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
+<!--    <div>${'yyyy MMMM dd a hh:mm:ss; \'day in year\': w' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
+
+    <h1>==== global objects =====</h1>
+    <div>Properties: ${properties.sling:resourceType}</div>
+    <div>Page Properties: ${pageProperties.jcr:title}</div>
+    <div>Inherited Page Properties: ${inheritedPageProperties.jcr:title}</div>
+    <div>Component: ${component.title}</div>
+    <div>Component Context: ${componentContext.page.title}</div>
+    <div>Design Node: ${currentDesign.path}</div>
+    <div>Current Node: ${currentNode.path}</div>
+    <div>Current Page: ${currentPage.path}</div>
+    <div>Resource: ${resource.path}</div>
+    <div>Resource Page: ${resourcePage.path}</div>
+    <div>Resource Design: ${resourceDesign.path}</div>
+    <div>wcmmode : ${wcmmode.edit} &nbsp;&nbsp; ${wcmmode.preview}</div>
 </sly>
