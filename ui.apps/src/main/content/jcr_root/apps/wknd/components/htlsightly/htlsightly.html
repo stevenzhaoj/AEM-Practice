@@ -1,4 +1,5 @@
-<div class="cq-placeholder cmp-title" data-emptytext="${component.title}:Click to configure" data-sly-unwrap="${!wcmmode.edit}"></div>
+<div class="cq-placeholder cmp-title" data-emptytext="${component.title}:Click to configure"
+     data-sly-unwrap="${!wcmmode.edit}" xmlns="http://www.w3.org/1999/html"></div>
 
 <sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.HTLSightly">
 
@@ -48,17 +49,45 @@
 <!--    <div>${'EEEE, d MMM y' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
 <!--    <div>${'yyyy MMMM dd a hh:mm:ss; \'day in year\': w' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
 
-    <h1>==== global objects =====</h1>
-    <div>Properties: ${properties.sling:resourceType}</div>
-    <div>Page Properties: ${pageProperties.jcr:title}</div>
-    <div>Inherited Page Properties: ${inheritedPageProperties.jcr:title}</div>
-    <div>Component: ${component.title}</div>
-    <div>Component Context: ${componentContext.page.title}</div>
-    <div>Design Node: ${currentDesign.path}</div>
-    <div>Current Node: ${currentNode.path}</div>
-    <div>Current Page: ${currentPage.path}</div>
-    <div>Resource: ${resource.path}</div>
-    <div>Resource Page: ${resourcePage.path}</div>
-    <div>Resource Design: ${resourceDesign.path}</div>
-    <div>wcmmode : ${wcmmode.edit} &nbsp;&nbsp; ${wcmmode.preview}</div>
+<!--    <h1>==== global objects =====</h1>-->
+<!--    <div>Properties: ${properties.sling:resourceType}</div>-->
+<!--    <div>Page Properties: ${pageProperties.jcr:title}</div>-->
+<!--    <div>Inherited Page Properties: ${inheritedPageProperties.jcr:title}</div>-->
+<!--    <div>Component: ${component.title}</div>-->
+<!--    <div>Component Context: ${componentContext.page.title}</div>-->
+<!--    <div>Design Node: ${currentDesign.path}</div>-->
+<!--    <div>Current Node: ${currentNode.path}</div>-->
+<!--    <div>Current Page: ${currentPage.path}</div>-->
+<!--    <div>Resource: ${resource.path}</div>-->
+<!--    <div>Resource Page: ${resourcePage.path}</div>-->
+<!--    <div>Resource Design: ${resourceDesign.path}</div>-->
+<!--    <div>wcmmode : ${wcmmode.edit} &nbsp;&nbsp; ${wcmmode.preview}</div>-->
+    <h1>==== context =====</h1>
+    <h2>==== styleToken & styleString ====</h2>
+    <div style="color: ${'red'};">
+        <p>Style Token not working</p>
+    </div>
+    <div style="color: ${'red' @ context='styleToken'};">
+        <p>Style Token working</p>
+    </div>
+    <div style="border-top: ${'2px solid red' @ context='styleToken'};">
+        <p>Style Token not working</p>
+    </div>
+    <div style="border-top: ${'2px solid red' @ context='styleString'};">
+        <p>Style String working</p>
+    </div>
+    <h2>==== scriptToken & scriptString ====</h2>
+    <div><button onclick="location.href='${'https://www.baidu.com'}'">打开百度</button></div>
+    <br>
+    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptToken'}'">打开百度</button></div>
+    <br>
+    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptString'}'">打开百度</button></div>
+    <br>
+    <h2>==== html ====</h2>
+    <div>${properties.html}</div>
+    <div>${properties.html @ context='html'}</div>
+    <h2>==== number ====</h2>
+    <div>${properties.number}</div>
+    <div>${properties.number @ context='number'}</div>
+    <div>${'abcdef' @ context='number'}</div>
 </sly>
