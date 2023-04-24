@@ -57,4 +57,9 @@ public class HTLSightlyImpl implements HTLSightly {
         books.add(Book.builder().name("JavaScript").price(33.33).build());
         return books;
     }
+
+    @Override
+    public Book getBook() {
+        return Book.builder().name("React").price(44.44).build();
+    }
 }

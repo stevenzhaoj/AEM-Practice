@@ -7,4 +7,6 @@ import java.util.List;
 public interface HTLSightly {
 
     List<Book> getBooks();
+
+    Book getBook();
 }

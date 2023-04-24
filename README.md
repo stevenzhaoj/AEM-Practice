@@ -64,3 +64,5 @@
 [06_global-objects](readme/04_Sightly/06_global-objects.md)
 
 [07_context](readme/04_Sightly/07_context.md)
+
+[08_data-sly-set](readme/04_Sightly/08_data-sly-set.md)

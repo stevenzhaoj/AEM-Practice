@@ -62,32 +62,39 @@
 <!--    <div>Resource Page: ${resourcePage.path}</div>-->
 <!--    <div>Resource Design: ${resourceDesign.path}</div>-->
 <!--    <div>wcmmode : ${wcmmode.edit} &nbsp;&nbsp; ${wcmmode.preview}</div>-->
-    <h1>==== context =====</h1>
-    <h2>==== styleToken & styleString ====</h2>
-    <div style="color: ${'red'};">
-        <p>Style Token not working</p>
+<!--    <h1>==== context =====</h1>-->
+<!--    <h2>==== styleToken & styleString ====</h2>-->
+<!--    <div style="color: ${'red'};">-->
+<!--        <p>Style Token not working</p>-->
+<!--    </div>-->
+<!--    <div style="color: ${'red' @ context='styleToken'};">-->
+<!--        <p>Style Token working</p>-->
+<!--    </div>-->
+<!--    <div style="border-top: ${'2px solid red' @ context='styleToken'};">-->
+<!--        <p>Style Token not working</p>-->
+<!--    </div>-->
+<!--    <div style="border-top: ${'2px solid red' @ context='styleString'};">-->
+<!--        <p>Style String working</p>-->
+<!--    </div>-->
+<!--    <h2>==== scriptToken & scriptString ====</h2>-->
+<!--    <div><button onclick="location.href='${'https://www.baidu.com'}'">打开百度</button></div>-->
+<!--    <br>-->
+<!--    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptToken'}'">打开百度</button></div>-->
+<!--    <br>-->
+<!--    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptString'}'">打开百度</button></div>-->
+<!--    <br>-->
+<!--    <h2>==== html ====</h2>-->
+<!--    <div>${properties.html}</div>-->
+<!--    <div>${properties.html @ context='html'}</div>-->
+<!--    <h2>==== number ====</h2>-->
+<!--    <div>${properties.number}</div>-->
+<!--    <div>${properties.number @ context='number'}</div>-->
+<!--    <div>${'abcdef' @ context='number'}</div>-->
+    <h1>==== data-sly-set =====</h1>
+    <div>Book Name: ${model.book.name}</div>
+    <div>Book Price: ${model.book.price}</div>
+    <div data-sly-set.book="${model.book}">
+        <div>Book Name: ${book.name}</div>
+        <div>Book Price: ${book.price}</div>
     </div>
-    <div style="color: ${'red' @ context='styleToken'};">
-        <p>Style Token working</p>
-    </div>
-    <div style="border-top: ${'2px solid red' @ context='styleToken'};">
-        <p>Style Token not working</p>
-    </div>
-    <div style="border-top: ${'2px solid red' @ context='styleString'};">
-        <p>Style String working</p>
-    </div>
-    <h2>==== scriptToken & scriptString ====</h2>
-    <div><button onclick="location.href='${'https://www.baidu.com'}'">打开百度</button></div>
-    <br>
-    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptToken'}'">打开百度</button></div>
-    <br>
-    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptString'}'">打开百度</button></div>
-    <br>
-    <h2>==== html ====</h2>
-    <div>${properties.html}</div>
-    <div>${properties.html @ context='html'}</div>
-    <h2>==== number ====</h2>
-    <div>${properties.number}</div>
-    <div>${properties.number @ context='number'}</div>
-    <div>${'abcdef' @ context='number'}</div>
 </sly>
