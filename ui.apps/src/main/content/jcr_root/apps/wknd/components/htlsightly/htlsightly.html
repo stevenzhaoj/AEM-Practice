@@ -90,11 +90,18 @@
 <!--    <div>${properties.number}</div>-->
 <!--    <div>${properties.number @ context='number'}</div>-->
 <!--    <div>${'abcdef' @ context='number'}</div>-->
-    <h1>==== data-sly-set =====</h1>
-    <div>Book Name: ${model.book.name}</div>
-    <div>Book Price: ${model.book.price}</div>
-    <div data-sly-set.book="${model.book}">
-        <div>Book Name: ${book.name}</div>
-        <div>Book Price: ${book.price}</div>
-    </div>
+<!--    <h1>==== data-sly-set =====</h1>-->
+<!--    <div>Book Name: ${model.book.name}</div>-->
+<!--    <div>Book Price: ${model.book.price}</div>-->
+<!--    <div data-sly-set.book="${model.book}">-->
+<!--        <div>Book Name: ${book.name}</div>-->
+<!--        <div>Book Price: ${book.price}</div>-->
+<!--    </div>-->
+    <h1>==== in join =====</h1>
+    <div>'a' is present in 'abc' ? ${'a' in 'abc'}</div>
+    <div>'ac' is present in 'abc' ? ${'ac' in 'abc'}</div>
+    <div>'Java' is present in the book list ? ${'Java' in model.bookNames}</div>
+    <div>'JAVA' is present in the book list ? ${'JAVA' in model.bookNames}</div>
+    <div>Names of books are ${model.bookNames @ join=','}</div>
+    <div>Names of books are ${model.bookNames @ join='&'}</div>
 </sly>

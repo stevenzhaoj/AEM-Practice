@@ -66,3 +66,5 @@
 [07_context](readme/04_Sightly/07_context.md)
 
 [08_data-sly-set](readme/04_Sightly/08_data-sly-set.md)
+
+[09_OperatorIn&Join](readme/04_Sightly/09_OperatorInJoin.md)

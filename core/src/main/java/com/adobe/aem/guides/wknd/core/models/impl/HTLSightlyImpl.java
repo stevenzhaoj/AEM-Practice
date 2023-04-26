@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Model(
@@ -61,5 +62,9 @@ public class HTLSightlyImpl implements HTLSightly {
     @Override
     public Book getBook() {
         return Book.builder().name("React").price(44.44).build();
+    }
+
+    public List<String> getBookNames() {
+        return getBooks().stream().map(Book::getName).collect(Collectors.toList());
     }
 }
