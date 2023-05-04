@@ -3,140 +3,150 @@
 
 <sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.HTLSightly">
 
-<!--    <h1>==== data-sly-list =====</h1>-->
-<!--    <div  class="list" data-sly-list.book="${model.books @ begin = 0, step=2, end = 2}">-->
-<!--        <h1>下标：${bookList.index}</h1>-->
-<!--        <h1>序号：${bookList.count}</h1>-->
-<!--        <h2>书名：${book.name}</h2>-->
-<!--        <h2>价格：${book.price}</h2>-->
-<!--    </div>-->
+    <!--    <h1>==== data-sly-list =====</h1>-->
+    <!--    <div  class="list" data-sly-list.book="${model.books @ begin = 0, step=2, end = 2}">-->
+    <!--        <h1>下标：${bookList.index}</h1>-->
+    <!--        <h1>序号：${bookList.count}</h1>-->
+    <!--        <h2>书名：${book.name}</h2>-->
+    <!--        <h2>价格：${book.price}</h2>-->
+    <!--    </div>-->
 
-<!--    <h1>==== data-sly-repeat =====</h1>-->
-<!--    <div class="repeat" data-sly-repeat.book="${model.books}">-->
-<!--        <h1>下标：${bookList.index}, 序号：${bookList.count}, 第一个：${bookList.first}, 最后一个：${bookList.last}</h1>-->
-<!--        <h2>书名：${book.name}</h2>-->
-<!--        <h2>价格：${book.price}</h2>-->
-<!--    </div>-->
+    <!--    <h1>==== data-sly-repeat =====</h1>-->
+    <!--    <div class="repeat" data-sly-repeat.book="${model.books}">-->
+    <!--        <h1>下标：${bookList.index}, 序号：${bookList.count}, 第一个：${bookList.first}, 最后一个：${bookList.last}</h1>-->
+    <!--        <h2>书名：${book.name}</h2>-->
+    <!--        <h2>价格：${book.price}</h2>-->
+    <!--    </div>-->
 
-<!--    <h1>==== data-sly-template =====</h1>-->
-<!--    <div data-sly-use.booksTemplate="booksTemplate.html">-->
-<!--        <sly data-sly-call="${booksTemplate.templateBooks @ books=model.books}"></sly>-->
-<!--    </div>-->
+    <!--    <h1>==== data-sly-template =====</h1>-->
+    <!--    <div data-sly-use.booksTemplate="booksTemplate.html">-->
+    <!--        <sly data-sly-call="${booksTemplate.templateBooks @ books=model.books}"></sly>-->
+    <!--    </div>-->
 
-<!--    <h1>==== data-sly-element & data-sly-attribute =====</h1>-->
-<!--    <div data-sly-element="${model.titleSize}" data-sly-test="${model.title}" data-sly-attribute.id="id">${model.title}</div>-->
-<!--    <div data-sly-test="${model.title}" data-sly-attribute.class="class">${model.title}</div>-->
-<!--    <div data-sly-test="${model.title}" data-sly-attribute="${model.attributes}">${model.title}</div>-->
+    <!--    <h1>==== data-sly-element & data-sly-attribute =====</h1>-->
+    <!--    <div data-sly-element="${model.titleSize}" data-sly-test="${model.title}" data-sly-attribute.id="id">${model.title}</div>-->
+    <!--    <div data-sly-test="${model.title}" data-sly-attribute.class="class">${model.title}</div>-->
+    <!--    <div data-sly-test="${model.title}" data-sly-attribute="${model.attributes}">${model.title}</div>-->
 
 
-<!--    <h1>==== data-sly-include =====</h1>-->
-<!--    <div class="include1" data-sly-include="include1.html">include1 content</div>-->
-<!--    <div data-sly-include="${'include/include2.html'}"></div>-->
-<!--    <div data-sly-include="${'include2.html' @ prependPath='include'}"></div>-->
-<!--    <div data-sly-include="${'include' @ appendPath='include2.html'}"></div>-->
-<!--    <div data-sly-include="${@ file='include3.html'}"></div>-->
-<!--    <div data-sly-include="${'include3.html' @ prependPath='/prependPath', appendPath='/appendPath'}"></div>-->
+    <!--    <h1>==== data-sly-include =====</h1>-->
+    <!--    <div class="include1" data-sly-include="include1.html">include1 content</div>-->
+    <!--    <div data-sly-include="${'include/include2.html'}"></div>-->
+    <!--    <div data-sly-include="${'include2.html' @ prependPath='include'}"></div>-->
+    <!--    <div data-sly-include="${'include' @ appendPath='include2.html'}"></div>-->
+    <!--    <div data-sly-include="${@ file='include3.html'}"></div>-->
+    <!--    <div data-sly-include="${'include3.html' @ prependPath='/prependPath', appendPath='/appendPath'}"></div>-->
 
-<!--    <h1>==== data-sly-resource =====</h1>-->
-<!--    <div data-sly-resource="${'/content/wknd/us/en/steven'}"></div>-->
-<!--    <div data-sly-resource="${'/content/wknd/us/en/steven/jcr:content/root/container/translate'}"></div>-->
-<!--    <div data-sly-resource="${'translate' @ resourceType='wknd/components/translate'}"></div>-->
+    <!--    <h1>==== data-sly-resource =====</h1>-->
+    <!--    <div data-sly-resource="${'/content/wknd/us/en/steven'}"></div>-->
+    <!--    <div data-sly-resource="${'/content/wknd/us/en/steven/jcr:content/root/container/translate'}"></div>-->
+    <!--    <div data-sly-resource="${'translate' @ resourceType='wknd/components/translate'}"></div>-->
 
-<!--    <h1>==== time & date =====</h1>-->
-<!--    ${properties.jcr:created}-->
-<!--    <div>${'yyyy-MM-dd' @ format=properties.jcr:created}</div>-->
-<!--    <div>${'yyyy-MM-dd HH:mm:ss' @ format=properties.jcr:created, timezone='GMT+8'}</div>-->
-<!--    <div>${'EEEE, d MMM y' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
-<!--    <div>${'yyyy MMMM dd a hh:mm:ss; \'day in year\': w' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
+    <!--    <h1>==== time & date =====</h1>-->
+    <!--    ${properties.jcr:created}-->
+    <!--    <div>${'yyyy-MM-dd' @ format=properties.jcr:created}</div>-->
+    <!--    <div>${'yyyy-MM-dd HH:mm:ss' @ format=properties.jcr:created, timezone='GMT+8'}</div>-->
+    <!--    <div>${'EEEE, d MMM y' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
+    <!--    <div>${'yyyy MMMM dd a hh:mm:ss; \'day in year\': w' @ format=properties.jcr:created, timezone='GMT+8', locale='zh'}</div>-->
 
-<!--    <h1>==== global objects =====</h1>-->
-<!--    <div>Properties: ${properties.sling:resourceType}</div>-->
-<!--    <div>Page Properties: ${pageProperties.jcr:title}</div>-->
-<!--    <div>Inherited Page Properties: ${inheritedPageProperties.jcr:title}</div>-->
-<!--    <div>Component: ${component.title}</div>-->
-<!--    <div>Component Context: ${componentContext.page.title}</div>-->
-<!--    <div>Design Node: ${currentDesign.path}</div>-->
-<!--    <div>Current Node: ${currentNode.path}</div>-->
-<!--    <div>Current Page: ${currentPage.path}</div>-->
-<!--    <div>Resource: ${resource.path}</div>-->
-<!--    <div>Resource Page: ${resourcePage.path}</div>-->
-<!--    <div>Resource Design: ${resourceDesign.path}</div>-->
-<!--    <div>wcmmode : ${wcmmode.edit} &nbsp;&nbsp; ${wcmmode.preview}</div>-->
-<!--    <h1>==== context =====</h1>-->
-<!--    <h2>==== styleToken & styleString ====</h2>-->
-<!--    <div style="color: ${'red'};">-->
-<!--        <p>Style Token not working</p>-->
-<!--    </div>-->
-<!--    <div style="color: ${'red' @ context='styleToken'};">-->
-<!--        <p>Style Token working</p>-->
-<!--    </div>-->
-<!--    <div style="border-top: ${'2px solid red' @ context='styleToken'};">-->
-<!--        <p>Style Token not working</p>-->
-<!--    </div>-->
-<!--    <div style="border-top: ${'2px solid red' @ context='styleString'};">-->
-<!--        <p>Style String working</p>-->
-<!--    </div>-->
-<!--    <h2>==== scriptToken & scriptString ====</h2>-->
-<!--    <div><button onclick="location.href='${'https://www.baidu.com'}'">打开百度</button></div>-->
-<!--    <br>-->
-<!--    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptToken'}'">打开百度</button></div>-->
-<!--    <br>-->
-<!--    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptString'}'">打开百度</button></div>-->
-<!--    <br>-->
-<!--    <h2>==== html ====</h2>-->
-<!--    <div>${properties.html}</div>-->
-<!--    <div>${properties.html @ context='html'}</div>-->
-<!--    <h2>==== number ====</h2>-->
-<!--    <div>${properties.number}</div>-->
-<!--    <div>${properties.number @ context='number'}</div>-->
-<!--    <div>${'abcdef' @ context='number'}</div>-->
-<!--    <h1>==== data-sly-set =====</h1>-->
-<!--    <div>Book Name: ${model.book.name}</div>-->
-<!--    <div>Book Price: ${model.book.price}</div>-->
-<!--    <div data-sly-set.book="${model.book}">-->
-<!--        <div>Book Name: ${book.name}</div>-->
-<!--        <div>Book Price: ${book.price}</div>-->
-<!--    </div>-->
-<!--    <h1>==== in join =====</h1>-->
-<!--    <div>'a' is present in 'abc' ? ${'a' in 'abc'}</div>-->
-<!--    <div>'ac' is present in 'abc' ? ${'ac' in 'abc'}</div>-->
-<!--    <div>'Java' is present in the book list ? ${'Java' in model.bookNames}</div>-->
-<!--    <div>'JAVA' is present in the book list ? ${'JAVA' in model.bookNames}</div>-->
-<!--    <div>Names of books are ${model.bookNames @ join=','}</div>-->
-<!--    <div>Names of books are ${model.bookNames @ join='&'}</div>-->
-    <h1>==== URL Operators =====</h1>
-    <h2>==== 协议 ====</h2>
-    <div>${'//www.baidu.com' @ scheme='http'}</div>
-    <div>${'http://www.baidu.com' @ scheme='https'}</div>
-    <div>${'https://www.baidu.com' @ scheme=' '}</div>
-    <div>${'https://www.baidu.com' @ scheme}</div>
+    <!--    <h1>==== global objects =====</h1>-->
+    <!--    <div>Properties: ${properties.sling:resourceType}</div>-->
+    <!--    <div>Page Properties: ${pageProperties.jcr:title}</div>-->
+    <!--    <div>Inherited Page Properties: ${inheritedPageProperties.jcr:title}</div>-->
+    <!--    <div>Component: ${component.title}</div>-->
+    <!--    <div>Component Context: ${componentContext.page.title}</div>-->
+    <!--    <div>Design Node: ${currentDesign.path}</div>-->
+    <!--    <div>Current Node: ${currentNode.path}</div>-->
+    <!--    <div>Current Page: ${currentPage.path}</div>-->
+    <!--    <div>Resource: ${resource.path}</div>-->
+    <!--    <div>Resource Page: ${resourcePage.path}</div>-->
+    <!--    <div>Resource Design: ${resourceDesign.path}</div>-->
+    <!--    <div>wcmmode : ${wcmmode.edit} &nbsp;&nbsp; ${wcmmode.preview}</div>-->
+    <!--    <h1>==== context =====</h1>-->
+    <!--    <h2>==== styleToken & styleString ====</h2>-->
+    <!--    <div style="color: ${'red'};">-->
+    <!--        <p>Style Token not working</p>-->
+    <!--    </div>-->
+    <!--    <div style="color: ${'red' @ context='styleToken'};">-->
+    <!--        <p>Style Token working</p>-->
+    <!--    </div>-->
+    <!--    <div style="border-top: ${'2px solid red' @ context='styleToken'};">-->
+    <!--        <p>Style Token not working</p>-->
+    <!--    </div>-->
+    <!--    <div style="border-top: ${'2px solid red' @ context='styleString'};">-->
+    <!--        <p>Style String working</p>-->
+    <!--    </div>-->
+    <!--    <h2>==== scriptToken & scriptString ====</h2>-->
+    <!--    <div><button onclick="location.href='${'https://www.baidu.com'}'">打开百度</button></div>-->
+    <!--    <br>-->
+    <!--    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptToken'}'">打开百度</button></div>-->
+    <!--    <br>-->
+    <!--    <div><button onclick="location.href='${'https://www.baidu.com' @ context='scriptString'}'">打开百度</button></div>-->
+    <!--    <br>-->
+    <!--    <h2>==== html ====</h2>-->
+    <!--    <div>${properties.html}</div>-->
+    <!--    <div>${properties.html @ context='html'}</div>-->
+    <!--    <h2>==== number ====</h2>-->
+    <!--    <div>${properties.number}</div>-->
+    <!--    <div>${properties.number @ context='number'}</div>-->
+    <!--    <div>${'abcdef' @ context='number'}</div>-->
+    <!--    <h1>==== data-sly-set =====</h1>-->
+    <!--    <div>Book Name: ${model.book.name}</div>-->
+    <!--    <div>Book Price: ${model.book.price}</div>-->
+    <!--    <div data-sly-set.book="${model.book}">-->
+    <!--        <div>Book Name: ${book.name}</div>-->
+    <!--        <div>Book Price: ${book.price}</div>-->
+    <!--    </div>-->
+    <!--    <h1>==== in join =====</h1>-->
+    <!--    <div>'a' is present in 'abc' ? ${'a' in 'abc'}</div>-->
+    <!--    <div>'ac' is present in 'abc' ? ${'ac' in 'abc'}</div>-->
+    <!--    <div>'Java' is present in the book list ? ${'Java' in model.bookNames}</div>-->
+    <!--    <div>'JAVA' is present in the book list ? ${'JAVA' in model.bookNames}</div>-->
+    <!--    <div>Names of books are ${model.bookNames @ join=','}</div>-->
+    <!--    <div>Names of books are ${model.bookNames @ join='&'}</div>-->
+    <!--    <h1>==== URL Operators =====</h1>-->
+    <!--    <h2>==== 协议 ====</h2>-->
+    <!--    <div>${'//www.baidu.com' @ scheme='http'}</div>-->
+    <!--    <div>${'http://www.baidu.com' @ scheme='https'}</div>-->
+    <!--    <div>${'https://www.baidu.com' @ scheme=' '}</div>-->
+    <!--    <div>${'https://www.baidu.com' @ scheme}</div>-->
 
-    <h2>==== 域名 ====</h2>
-    <div>${'https://www.baidu.com' @ domain='www.google.com'}</div>
-    <div>${'https://www.baidu.com' @ domain='google.com'}</div>
+    <!--    <h2>==== 域名 ====</h2>-->
+    <!--    <div>${'https://www.baidu.com' @ domain='www.google.com'}</div>-->
+    <!--    <div>${'https://www.baidu.com' @ domain='google.com'}</div>-->
 
-    <h2>==== 选择器 ====</h2>
-    <div>${'https://www.baidu.com/aa/bb.html' @ selectors='selector1.selector2'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html' @ selectors=['selector1','selector2']}</div>
-    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ addSelectors=['selector3','selector4']}</div>
-    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ removeSelectors='selector1'}</div>
-    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ selectors=''}</div>
-    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ selectors}</div>
+    <!--    <h2>==== 选择器 ====</h2>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html' @ selectors='selector1.selector2'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html' @ selectors=['selector1','selector2']}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ addSelectors=['selector3','selector4']}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ removeSelectors='selector1'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ selectors=''}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.selector1.selector2.html' @ selectors}</div>-->
 
-    <h2>==== 扩展 ====</h2>
-    <div>${'https://www.baidu.com/aa/bb.html' @ extension='json'}</div>
-    <div>${'https://www.baidu.com/aa/bb' @ extension='html'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html' @ extension}</div>
+    <!--    <h2>==== 扩展 ====</h2>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html' @ extension='json'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb' @ extension='html'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html' @ extension}</div>-->
 
-    <h2>==== 后缀 ====</h2>
-    <div>${'https://www.baidu.com/aa/bb.html' @ suffix='cc/dd'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ prependSuffix='ee/ff'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ appendSuffix='ee/ff'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ suffix=''}</div>
-    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ suffix}</div>
+    <!--    <h2>==== 后缀 ====</h2>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html' @ suffix='cc/dd'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ prependSuffix='ee/ff'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ appendSuffix='ee/ff'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ suffix=''}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html/cc/dd' @ suffix}</div>-->
 
-    <h2>==== 片段 ====</h2>
-    <div>${'https://www.baidu.com/aa/bb.html' @ fragment='fragment1'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html#fragment1' @ fragment='fragment2'}</div>
-    <div>${'https://www.baidu.com/aa/bb.html#fragment1' @ fragment}</div>
+    <!--    <h2>==== 片段 ====</h2>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html' @ fragment='fragment1'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html#fragment1' @ fragment='fragment2'}</div>-->
+    <!--    <div>${'https://www.baidu.com/aa/bb.html#fragment1' @ fragment}</div>-->
+
+    <h1>==== sly tag & comment ====</h1>
+    <h2>==== sly tag ====</h2>
+    <div data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline"></div>
+    <sly data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline"></sly>
+    <sly data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline" data-sly-unwrap="${false}"></sly>
+    <sly data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline" data-sly-unwrap="${!wcmmode.edit}"></sly>
+    <h2>==== comment ====</h2>
+    <!--/*<div data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline">123</div>*/-->
+    <!--<div data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline"></div>-->
 </sly>
