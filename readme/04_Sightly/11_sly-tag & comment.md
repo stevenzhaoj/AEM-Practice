@@ -1,6 +1,6 @@
 [TOC]
 
-# 32、HTL Sightly（10）Sly tag & comments
+# 32、HTL Sightly（11）Sly tag & comments
 
 这一节中简介如何使用Sly标签和注释标签实现代码的注释。
 
