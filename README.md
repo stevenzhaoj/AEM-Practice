@@ -76,3 +76,5 @@
 ## 5.Adaptive Forms
 
 [01_IntroductionToAdaptiveForms](readme/05_Intergrations/01_MySQL/01_IntroductionToAdaptiveForms.md)
+
+[02_SoftwareInstall](readme/05_Intergrations/01_MySQL/02_SoftwareInstall.md)
