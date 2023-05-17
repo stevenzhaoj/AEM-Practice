@@ -82,3 +82,7 @@
 [03_DataModel](readme/05_Intergrations/01_MySQL/03_DataModel.md)
 
 [04_CreateAdaptForm](readme/05_Intergrations/01_MySQL/04_CreateAdaptForm.md)
+
+## 6.Solr Integration
+
+[01_AEM&Sorl](readme/05_Intergrations/02_Solr/01_AEM&Sorl.md)
