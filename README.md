@@ -86,3 +86,5 @@
 ## 6.Solr Integration
 
 [01_AEM&Sorl](readme/05_Intergrations/02_Solr/01_AEM&Sorl.md)
+
+[02_SolrInstall](readme/05_Intergrations/02_Solr/02_SolrInstall.md)
