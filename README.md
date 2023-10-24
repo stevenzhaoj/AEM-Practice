@@ -1,5 +1,9 @@
 # Practice for AEM
 
+## 感谢[JetBrains](https://www.jetbrains.com/shop/eform/opensource)对本项目的支持！
+
+<img src="https://www.jetbrains.com/shop/static/images/jetbrains-logo-inv.svg" height="100">
+
 ## 1.Develop
 
 [01_AEM安装及Author实例的启动](readme/01_develop/01_AEM安装及Author实例的启动.md)
